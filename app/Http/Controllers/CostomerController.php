@@ -55,11 +55,12 @@ class CostomerController extends Controller
         $costomer->email = $req->email;
         $costomer->compunys_name = $req->compunys_name;
         $costomer->compunys_logo = $req->compunys_logo;
-        $costomer->social_link = $req->social_link;
-        $costomer->social_link = $req->social_link;
+        $costomer->social_linkone = $req->social_linkone;
+        $costomer->social_linktwo = $req->social_linktwo;
         $costomer->address = $req->address;
         $costomer->state = $req->state;
         $costomer->country = $req->country;
+        $costomer->password = $req->password;
         $costomer->save();
 
         event(new newcostomerrequist("$costomer->name Send To Register Request"));
@@ -87,11 +88,21 @@ class CostomerController extends Controller
 
         $costomer = new costomer;
         $costomer->name = $costomerRequst->name;
-        $costomer->name = $costomerRequst->name;
-        $costomer->save();
+        $costomer->phone_no = $costomerRequst->phone_no;
+        $costomer->email = $costomerRequst->email;
+        $costomer->compunys_name = $costomerRequst->compunys_name;
+        $costomer->compunys_logo = $costomerRequst->compunys_logo;
+        $costomer->social_linkone = $costomerRequst->social_linkone;
+        $costomer->social_linktwo = $costomerRequst->social_linktwo;
+        $costomer->address = $costomerRequst->address;
+        $costomer->state = $costomerRequst->state;
+        $costomer->country = $costomerRequst->country;
         $costomer->password = Hash::make($costomerRequst->password);
+        $costomer->save();
 
         $costomerRequst->destroy($id);
+
+        event(new newcostomerrequist("$costomer->name Send To Register Request"));
 
         return response(["msg" => "Approved"], 200);
     }

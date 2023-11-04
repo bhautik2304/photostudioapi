@@ -21,8 +21,8 @@ return new class extends Migration
             $table->text("password");
             $table->text("compunys_name");
             $table->text("compunys_logo");
-            $table->text("social_link")->nullable();
-            $table->text("social_link")->nullable();
+            $table->text("social_linkone")->nullable();
+            $table->text("social_linktwo")->nullable();
             $table->text("address")->nullable();
             $table->string("state")->nullable();
             $table->string("country")->nullable();

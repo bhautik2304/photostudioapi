@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../client_app"
+		},
+		{
+			"path": "../../../admin_app"
+		}
+	],
+	"settings": {
+		"jest.disabledWorkspaceFolders": [
+			"app_api"
+		]
+	}
+}
